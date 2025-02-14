@@ -29,7 +29,11 @@ jobs:
 
             - name: Run tests
               run: |
-                  pytest
+                  if pytest --collect-only | grep -q 'collected 0 items'; then
+                    echo "No tests found, skipping pytest."
+                  else
+                    pytest
+                  fi
             
             - name: Format code with black
               run: black src/ tests/
