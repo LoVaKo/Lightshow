@@ -49,4 +49,4 @@ def test_analyze_audio(sample_audio_path):
         "RMS energy should be a numpy array"
     assert isinstance(audio_features["chroma"], np.ndarray), \
         "Chroma features should be a numpy array"
-    
+
