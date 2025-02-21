@@ -1,6 +1,5 @@
 import pytest
 import numpy as np
-import librosa
 from src.beat_detection import load_audio, analyze_audio
 
 @pytest.fixture
