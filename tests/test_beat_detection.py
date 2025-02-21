@@ -40,7 +40,7 @@ def test_analyze_audio(sample_audio_path):
     assert "chroma" in audio_features, \
         "Chroma features should be a key in the dictionary"
     assert isinstance(audio_features["tempo"], np.ndarray), \
-        "Tempo should be a float"
+        "Tempo should be a numpy array"
     assert isinstance(audio_features["beat_times"], np.ndarray), \
         "Beat times should be a numpy array"
     assert isinstance(audio_features["onset_times"], np.ndarray), \
