@@ -36,7 +36,7 @@ jobs:
                   fi
             
             - name: Format code with black
-              run: black src/ tests/
+              run: black --line-length 79 src/ tests/
 
             - name: Lint code with flake8
               run: flake8 src/ tests/
