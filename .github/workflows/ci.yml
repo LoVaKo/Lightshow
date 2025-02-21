@@ -39,4 +39,4 @@ jobs:
               run: black src/ tests/
 
             - name: Lint code with flake8
-              run: flake8 src/ tests/
+              run: flake8 --no-cache-dir src/ tests/
