@@ -17,7 +17,7 @@ Usage:
 
 import librosa
 import numpy as np
-from typing import Dict, Any, Tuple
+from typing import Dict, Tuple
 
 def load_audio(file_path: str) -> Tuple[np.ndarray, int]:
     """
@@ -32,7 +32,7 @@ def load_audio(file_path: str) -> Tuple[np.ndarray, int]:
     y, sr = librosa.load(file_path)
     return y, sr
 
-def analyze_audio(y: np.ndarray, sr: int) -> Dict[str, Any]:
+def analyze_audio(y: np.ndarray, sr: int) -> Dict[str, np.ndarray]:
     """
     Analyze the given audio waveform to extract key features:
     - Tempo (BPM)
@@ -47,7 +47,7 @@ def analyze_audio(y: np.ndarray, sr: int) -> Dict[str, Any]:
 
     Returns:
         Dict[str, Any]: Dictionary containing extracted audio features:
-            - "tempo" (float): Estimated beats per minute (BPM).
+            - "tempo" (np.ndarray): Estimated beats per minute (BPM).
             - "beat_times" (np.ndarray): Array of times (seconds) when beats occur.
             - "onset_times" (np.ndarray): Array of times (seconds) when musical onsets occur.
             - "rms" (np.ndarray): Normalized root mean square (RMS) energy levels.
